@@ -1,8 +1,9 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
-# Create your views here.
 from .models import UserAPI
 from .serializers import UserApiSerializer
+from django.shortcuts import get_object_or_404
+# Create your views here.
 class UserAPIView(APIView):
     def get(self,request):
         print(request.data)
@@ -22,3 +23,19 @@ class UserAPIView(APIView):
         if serializer.is_valid(raise_exception=True):
             save_data=serializer.save()
         return Response({"Success":"User '{}' created successfully".format(save_data.name)})
+
+    def put(self,request,pk):
+        queryset=get_object_or_404(UserAPI.objects.all(),pk=pk) ##to get the stored element values
+
+        parsed_data=request.data ## it will give new values
+        serializer =UserApiSerializer(instance=queryset,data=parsed_data,partial=True)
+        if serializer.is_valid(raise_exception=True):
+            save_data=serializer.save()
+        return Response({"Success":"User '{}' Updated successfully".format(save_data.name)})
+
+    def delete(self,request,pk):
+        queryset=get_object_or_404(UserAPI.objects.all(),pk=pk)
+        queryset.delete()
+        return Response({"Success":"User with Id'{}' Deleted successfully".format(pk)})
+
+    
