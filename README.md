@@ -8,7 +8,8 @@
  - Password
 
 ## Getting Started
-
-> python manage.py runserver
-> Enter all the information and press the submit button
-> The record will be added to the database
+```
+python manage.py runserver
+Enter all the information and press the submit button
+The record will be added to the database
+```
