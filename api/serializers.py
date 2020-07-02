@@ -4,7 +4,7 @@ from .models import UserAPI
 class UserApiSerializer(serializers.Serializer):
     name=serializers.CharField(max_length=50)
     email=serializers.CharField()
-    password=serializers.CharField()
+    password=serializers.CharField(min_length=8)
 
     def create(self,validated_data):
         return UserAPI.objects.create(**validated_data)

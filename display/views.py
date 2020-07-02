@@ -18,6 +18,6 @@ def submitUser(request):
     'Content-Type': 'application/json'
     }
 
-    response = requests.request("GET", url, headers=headers, data = payload)
+    response = requests.request("POST", url, headers=headers, data = payload)
     data=response.text
     return render(request,'success.html',{'data':data})
