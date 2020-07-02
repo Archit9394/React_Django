@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import UserAPI
 
 class UserApiSerializer(serializers.Serializer):
-    name=serializers.CharField(max_length=50)
+    #name=serializers.CharField(max_length=50)
     email=serializers.CharField()
     password=serializers.CharField(min_length=8)
 

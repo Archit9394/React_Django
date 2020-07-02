@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    {% load staticfiles %}
+<head>
+    <title>signin</title>
+    <link rel="stylesheet" href='{% static "signup.css" %}'>
+</head>
+ <body >
+    <div class="page" style="position: fixed;top:0%;left:0%;width:100%;height:100%;background:white;">
+    <div class="top_nav">
+        <!-- <link rel="icon" type="image/png" href="{% static 'consultadd_logo.png' %}"> -->
+        <img src='{% static "consultadd_logo.png" %}'/>
+     </div>
+       <div style="width: 50%; height: 800px; float: left">
+             <img align="right" src='{% static "food2-0.jpg" %}'>
+        </div>
+            <div style="margin-left: 50%; height: 800px;">
+                <div class="box">
+                    <h1>Sign In!</h1>
+                    <form name="form1" action="{% url 'getu' %}" >
+                        <!-- <input type="text" name="username" placeholder="Username"/> -->
+                        <input class="mail" type="email" name="email" placeholder="Email"/>
+                        <input type="password" id="psw" name="password" placeholder="Enter your password"> 
+                        <!-- <input type="password" name="repeat_password" placeholder="Repeat your password"/><br> -->
+                        <input type="submit" name="signup_submit" value="Sign in"/><br>
+                    </form>
+                    <p>Login with</p>
+                    <button class="facebook_btn">facebook</button>
+                    <button class="google_btn">Google</button>
+                </div>
+            </div>
+    </div>
+    <script src='{% static "signup.js" %}'></script>
+ </body>
+</html>
