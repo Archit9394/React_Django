@@ -1,6 +1,6 @@
 # RestAPI
 
-##Introduction
+## Introduction
  This repository contain a working signup page. The signup page checks for the Email and Password Validations. 
  The Signup page contains three columns:
  - Username
