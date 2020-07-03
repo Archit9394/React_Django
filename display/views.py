@@ -13,7 +13,7 @@ def submitUser(request):
     password=request.GET['password']
     name=request.GET['username']
     print (email,password,name,"this is me")
-    url = "http://127.0.0.1:8000/api/login/"
+    url = "http://localhost:5050/api/login/"
 
     payload = {"email":email,"password":password,"name":name}
     payload=json.dumps(payload)
@@ -31,7 +31,7 @@ def getUser(request):
     #name=request.GET['username']
     print (email,password,"this is me")
     #print (email,password,name,"this is me")
-    url = "http://127.0.0.1:8000/api/login/"
+    url = "http://localhost:5050/api/login/"
 
     payload = {"email":email,"password":password} #,"name":name}
     #payload = {"email":email,"password":password,"name":name}
