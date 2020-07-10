@@ -27,7 +27,7 @@ SECRET_KEY = '(2(=%+qmfni+gkn#i$zf%*y#)%xxd0ivgpo1tkng8^nik^r$3%'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CORS_ORIGIN_ALLOW_ALL = True # Added for react integration
 
 # Application definition
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # Added for react integration
+    'django.middleware.common.CommonMiddleware', # Added for react integration
 ]
 
 ROOT_URLCONF = 'postmann.urls'

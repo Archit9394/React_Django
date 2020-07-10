@@ -11,11 +11,11 @@ def signin(request):
 def submitUser(request):
     email=request.GET['email']
     password=request.GET['password']
-    name=request.GET['username']
-    print (email,password,name,"this is me")
-    url = "http://127.0.0.1:8000/api/login/"
+    username=request.GET['username']
+    print (email,password,username,"this is me")
+    url = "http://127.0.0.1:3002/api/login/"
 
-    payload = {"email":email,"password":password,"name":name}
+    payload = {"email":email,"password":password,"username":username}
     payload=json.dumps(payload)
     headers = {
     'Content-Type': 'application/json'
@@ -31,9 +31,9 @@ def getUser(request):
     #name=request.GET['username']
     print (email,password,"this is me")
     #print (email,password,name,"this is me")
-    url = "http://127.0.0.1:8000/api/login/"
+    url = "http://127.0.0.1:3002/api/login/"
 
-    payload = {"email":email,"password":password} #,"name":name}
+    payload = {"email":email,"password":password,"username":username}
     #payload = {"email":email,"password":password,"name":name}
     payload=json.dumps(payload)
     headers = {
